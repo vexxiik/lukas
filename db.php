@@ -1,25 +1,4 @@
 <?php
-/*
-$host = 'localhost';
-$dbname = 'lukas_reservations';
-$username = 'root';
-$password = '';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    // Set PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
-}
-?>
-
-
-
-<?php
-
-*/
-<?php
 
 // Aiven.io databáze
 $host = getenv('DB_HOST') ?: 'mysql-36c5d8dc-vexx-6ac1.d.aivencloud.com';
