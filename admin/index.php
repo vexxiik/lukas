@@ -5,7 +5,7 @@ if (!isset($_COOKIE['admin_auth']) || $_COOKIE['admin_auth'] !== $token) {
     exit;
 }
 
-require_once '../db.php';
+require_once __DIR__ . '/../db.php';
 
 // Fetch all reservations
 $stmt = $pdo->query("SELECT * FROM reservations ORDER BY created_at DESC");
