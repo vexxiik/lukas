@@ -115,6 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $clientMail->send();
         } catch (Exception $e) {
+            die("Chyba při odesílání e-mailu: " . $clientMail->ErrorInfo);
         }
 
         // Do NOT send the admin notification email yet. It will be sent via verify.php
