@@ -11,8 +11,13 @@ $password = getenv('DB_PASS');
 if (!$password) $password = $_ENV['DB_PASS'] ?? null;
 if (!$password) $password = $_SERVER['DB_PASS'] ?? null;
 
+// Odstraníme případné neviditelné mezery z kopírování
+$password = trim($password);
+$username = trim($username);
+$host = trim($host);
+
 if (empty($password)) {
-    die("Kritická chyba: Heslo k databázi (DB_PASS) nebylo nalezeno v proměnných Vercelu. Zkontroluj, jestli jsi ho v nastavení Vercelu správně uložil a udělal Redeploy.");
+    die("Kritická chyba: Heslo k databázi (DB_PASS) nebylo nalezeno v proměnných Vercelu.");
 }
 
 try {
@@ -23,7 +28,8 @@ try {
     ];
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password, $options);
 } catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    $passLen = strlen($password);
+    die("DEBUG VÝPIS: Připojení k DB selhalo.<br>Host: '$host'<br>Port: '$port'<br>User: '$username'<br>DB: '$dbname'<br>Délka hesla (nesmí obsahovat mezery!): $passLen znaků (očekáváno 25).<br>Chyba z databáze: " . $e->getMessage());
 }
 
 ?>
