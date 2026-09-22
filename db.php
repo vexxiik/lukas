@@ -7,8 +7,13 @@ $dbname = getenv('DB_NAME') ?: 'defaultdb';
 $username = getenv('DB_USER') ?: 'avnadmin';
 
 // Na Vercelu se heslo načítá z Environment Variables z bezpečnostních důvodů.
-// GitHub by navíc nahrání hesla přímo v kódu zablokoval.
-$password = getenv('DB_PASS'); 
+$password = getenv('DB_PASS');
+if (!$password) $password = $_ENV['DB_PASS'] ?? null;
+if (!$password) $password = $_SERVER['DB_PASS'] ?? null;
+
+if (empty($password)) {
+    die("Kritická chyba: Heslo k databázi (DB_PASS) nebylo nalezeno v proměnných Vercelu. Zkontroluj, jestli jsi ho v nastavení Vercelu správně uložil a udělal Redeploy.");
+}
 
 try {
     $options = [
