@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /test_email.php
+Disallow: /db_check.php
+
+Sitemap: https://terracomplexapartment.com/sitemap.php
