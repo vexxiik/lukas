@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS reservations (
     phone VARCHAR(50) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
-    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    status ENUM('unverified', 'pending', 'approved', 'rejected') DEFAULT 'unverified',
+    verification_token VARCHAR(255) NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
