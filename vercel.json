@@ -1,13 +1,12 @@
 {
   "functions": {
-    "index.php": { "runtime": "vercel-php@0.7.2" },
-    "galerie.php": { "runtime": "vercel-php@0.7.2" },
-    "sitemap.php": { "runtime": "vercel-php@0.7.2" },
-    "verify.php": { "runtime": "vercel-php@0.7.2" },
-    "process_reservation.php": { "runtime": "vercel-php@0.7.2" },
-    "admin/index.php": { "runtime": "vercel-php@0.7.2" },
-    "admin/login.php": { "runtime": "vercel-php@0.7.2" },
-    "admin/logout.php": { "runtime": "vercel-php@0.7.2" },
-    "admin/manage_reservation.php": { "runtime": "vercel-php@0.7.2" }
-  }
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.2"
+    }
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/api/index.php" },
+    { "source": "/(.*\\.php)", "destination": "/api/index.php" },
+    { "source": "/admin/(.*)", "destination": "/api/index.php" }
+  ]
 }
