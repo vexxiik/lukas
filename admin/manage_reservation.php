@@ -63,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!DOCTYPE html>
                         <html lang='cs'>
                         <head>
+                            <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
                             <meta charset='UTF-8'>
                             <style>
                                 body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f8fafc; color: #334155; margin: 0; padding: 0; }

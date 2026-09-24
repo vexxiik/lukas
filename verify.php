@@ -47,6 +47,7 @@ try {
     <!DOCTYPE html>
     <html lang='cs'>
     <head>
+        <link rel="icon" type="image/svg+xml" href="img/logo.svg">
         <meta charset='UTF-8'>
         <style>
             body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 0; }

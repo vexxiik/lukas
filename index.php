@@ -29,6 +29,7 @@ $og_locale = $og_locale_map[$current_lang] ?? 'cs_CZ';
 <html lang="<?= $current_lang ?>" class="scroll-smooth">
 
 <head>
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $lang['seo_title'] ?></title>

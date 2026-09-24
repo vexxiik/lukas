@@ -49,6 +49,7 @@ $eventsJson = json_encode($events);
 <html lang="cs">
 
 <head>
+    <link rel="icon" type="image/svg+xml" href="../img/logo.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Terra Complex Admin</title>
